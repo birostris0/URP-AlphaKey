@@ -1,0 +1,7 @@
+{
+  "name": "urp-alphakey",
+  "version": "0.1.0",
+  "dependencies": {
+    "com.unity.render-pipelines.universal": "14.0.7"
+  }
+}

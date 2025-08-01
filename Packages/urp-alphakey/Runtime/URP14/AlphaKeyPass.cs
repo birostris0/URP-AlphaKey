@@ -19,6 +19,9 @@ public partial class AlphaKeyPass : ScriptableRenderPass
 
         if (renderingData.cameraData is { isSceneViewCamera: true } or { isPreviewCamera: true })
             return;
+        
+        if (!renderingData.cameraData.camera.CompareTag("MainCamera"))
+            return;
 
         var cmd = CommandBufferPool.Get(ProfilerTag);
 

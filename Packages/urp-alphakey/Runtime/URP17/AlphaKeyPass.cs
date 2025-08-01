@@ -33,6 +33,9 @@ public partial class AlphaKeyPass : ScriptableRenderPass
         
         if (cameraData is { isSceneViewCamera: true } or { isPreviewCamera: true })
             return;
+        
+        if (!cameraData.camera.CompareTag("MainCamera"))
+            return;
 
         using (var builder = renderGraph.AddUnsafePass<PassData>(ProfilerTag, out var passData))
         {
